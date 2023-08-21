@@ -1,0 +1,43 @@
+.Signup{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .signup-box{
+        border: 1px solid black;
+        margin: 20px;
+        padding : 50px 20px;
+        min-width: 400px;
+        border-radius: 6px;
+
+        .heading{
+            text-align: center;
+        }
+    }
+    label,input{
+        display: block;
+        width: 100%;
+        
+    }
+    input{
+        padding: 8px 16px;
+        border: 1px solid black;
+        border-radius: 6px;
+    }
+    .submit{
+        background-color: rgb(68, 84, 255);
+        border: none;
+        margin-block: 8px;
+        border-radius: 4px;
+        font: bolder;
+        color: white;
+    }
+
+    .submit:hover{
+        background-color:   rgb(103, 111, 197);
+    }
+    .subheading{
+        margin-top: 16px;
+    }
+}

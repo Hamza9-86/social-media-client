@@ -1,0 +1,65 @@
+.updateProf{
+    .container{
+        display: flex;
+        padding-top: 20px;
+    }
+    .left-side{
+        flex: 1;
+        text-align: center;
+        .input-user-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .labelImg{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 2px dashed var(--accent-color);
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+            .inputImg{
+                display: none;
+            }
+        }
+    }
+    .right-side{
+        flex: 3;
+
+        form{
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 5px 16px;
+        }
+        input{
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            margin-top: 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            
+        }
+        .btn-primary{
+            width: fit-content;
+            margin-bottom: 16px;
+
+        }
+        .delete-btn{
+            background-color: red;
+            margin-top: 16px;
+        }
+        .delete-btn:hover{
+            background-color: rgb(255, 70, 70);
+        }
+        .delete-btn:active{
+            background-color: red;
+        }
+    }
+}
