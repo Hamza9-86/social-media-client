@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Signup.scss";
 import { axiosClient } from "../../utils/axiosClient";
 
@@ -7,6 +7,7 @@ function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -46,7 +47,11 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <input type="submit" className="submit" />
+          <input
+            type="submit"
+            className="submit"
+            onSubmit={navigate("/login")}
+          />
         </form>
         <p className="subheading">
           Already have an account? <Link to="/login">Login</Link>
