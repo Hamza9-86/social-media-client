@@ -50,7 +50,7 @@ function Signup() {
           <input
             type="submit"
             className="submit"
-            onSubmit={navigate("/login")}
+            onClick={navigate("/login")}
           />
         </form>
         <p className="subheading">
