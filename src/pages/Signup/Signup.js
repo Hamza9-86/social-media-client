@@ -2,22 +2,30 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Signup.scss";
 import { axiosClient } from "../../utils/axiosClient";
+import Loader from "../../components/Loader/Loader";
+import toast from "react-hot-toast";
 
 function Signup() {
   const [name, setName] = useState("");
+  const [loading,setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
     const result = await axiosClient.post("/auth/signup", {
       name,
       email,
       password,
     });
+    setLoading(false);
+    toast.success("Sign up completed");
+    navigate("/login")
     console.log(result);
   }
+  if (loading) return <Loader message="Activation in progress..." />;
   return (
     <div className="Signup">
       <div className="signup-box">

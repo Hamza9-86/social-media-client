@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../../redux/slices/appConfigSlice";
 import { axiosClient } from "../../utils/axiosClient";
 import { KEY_ACCESS_TOKEN, removeItem } from "../../utils/localStorageManager";
+import toast from "react-hot-toast";
 
 function Navbar() {
  
@@ -18,6 +19,7 @@ async function handleLogout(){
     try {
       dispatch(setLoading(true));
       await axiosClient.post('/auth/logout');
+      toast.success('Logged Out Successfully')
       removeItem(KEY_ACCESS_TOKEN);
       navigate('/login');
       dispatch(setLoading(false));
